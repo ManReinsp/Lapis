@@ -1,0 +1,30 @@
+{
+	"actions": [
+		{
+			"name": "Change Volume",
+			"execute": "perl changeVolume.pl %parameter1% %parameter2%",
+			"keywords": [
+				"volume",
+				"sound"
+			],
+			"parameters": [
+				[
+					"set",
+					"increase",
+					"decrease"
+				],
+				[
+					"[0-9*]",
+					"[(0-9)*(percent)]"
+				]
+			]
+		},
+		{
+			"name": "Mute Volume",
+			"execute": "perl changeVolume.pl mute",
+			"keywords": [
+				"mute"
+			]
+		}
+	]
+}
