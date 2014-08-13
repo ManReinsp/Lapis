@@ -1,4 +1,4 @@
-Lapis
+Language Action Pipeline Instruction System
 =====
 Lapis is a tool that converts text into actions, specified in json files.
 
