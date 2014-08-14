@@ -49,7 +49,6 @@ public class ActionList {
 			ArrayList<String> keywords = a.getKeywords();
 			// Loop over all Keywords
 			for(String k : keywords) {
-				System.out.println(k);
 				// Check if the keyword isn't already present
 				if(!this.keywords.containsKey(k)) {
 					// If it is new then enter it
@@ -62,7 +61,7 @@ public class ActionList {
 		}
 	}
 	
-	public HashMap<String, Action> getKeywords() {
-		return keywords;
+	public Action getActionForKeyword(String keyword) {
+		return keywords.get("keyword");
 	}
 }

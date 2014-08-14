@@ -43,33 +43,54 @@ public class Action {
 			// Add each keyword into the ArrayList
 			keywords.add(keywordsjson.getString(i));
 		}
-
+		
+		// Initialize the parameters available for this Action
 		parameters = new ArrayList<ArrayList<String>>();
+		// Try to load the JSONArray
 		try {
+			// Store the parameters as JSONArray
 			JSONArray parametersjson = action.getJSONArray("parameters");
 			
+			// Loop over the previously created array
 			for(int i = 0; i<parametersjson.length(); i++) {
+				// Initialize a temporary ArrayList
 				ArrayList<String> temp = new ArrayList<String>();
+				// Fetch all possibilities for parameter i
 				JSONArray parameterjson = parametersjson.getJSONArray(i);
 				
+				// Loop over all possibilities
 				for(int j = 0; j<parameterjson.length(); j++) {
+					// Write those into the temporary array
 					temp.add(parameterjson.getString(j));
 				}
 				
+				// Add the array to the parameter storage
 				parameters.add(temp);
 			}
+			// If no parameters are available just skip the assignment
 		} catch(JSONException e) {}
 	}
 	
+	/**
+	 * Return the stored command
+	 * @return
+	 */
 	public String execute() {
-		//TODO Implement
 		return execute + System.lineSeparator() + "It worked";
 	}
 	
+	/**
+	 * Return the stored keywords
+	 * @return
+	 */
 	public ArrayList<String> getKeywords() {
 		return keywords;
 	}
-	
+
+	/**
+	 * Return the stored parameters
+	 * @return
+	 */
 	public ArrayList<ArrayList<String>> getParameter() {
 		return parameters;
 	}
