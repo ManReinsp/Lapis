@@ -76,7 +76,7 @@ public class Action {
 	 * @return
 	 */
 	public String execute() {
-		return execute + System.lineSeparator() + "It worked";
+		return execute;
 	}
 	
 	/**

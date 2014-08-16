@@ -17,7 +17,7 @@ public class Parser {
 	
 	public String parse(String sentence, ActionList actions) {
 		ArrayList<Token> tokens = new ArrayList<Token>();
-		sentence = sentence.replaceAll(",", " ,").replaceAll(".", " . ").replaceAll("!", " !").replaceAll(";", " ;").replaceAll("?", " ?");
+		sentence = sentence.replaceAll(",", " ,").replaceAll("\\.", " . ").replaceAll("!", " !").replaceAll(";", " ;").replaceAll("\\?", " ?");
 		
 		StringTokenizer tokenizer = new StringTokenizer(sentence);
 		String token;
